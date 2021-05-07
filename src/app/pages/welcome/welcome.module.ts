@@ -11,7 +11,6 @@ import { StRadioFormComponent } from './components/st-radio-form/st-radio-form.c
 import { StRadioChartComponent } from './components/st-radio-chart/st-radio-chart.component';
 import { HttpClientModule } from '@angular/common/http';
 
-
 @NgModule({
   imports: [WelcomeRoutingModule, NzFormModule, NzTimePickerModule, FormsModule, HttpClientModule, ReactiveFormsModule],
   declarations: [WelcomeComponent, StRadioFormComponent, StRadioChartComponent],

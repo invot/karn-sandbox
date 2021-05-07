@@ -17,16 +17,17 @@ export class StRadioFormComponent implements OnInit {
 
   submitForm(): void {
     const data = this.radioForm.getRawValue();
-    for (const i in this.radioForm.controls) {
-      this.radioForm.controls[i].markAsDirty();
-      this.radioForm.controls[i].updateValueAndValidity();
+    this.radioForm.markAllAsTouched();
+    if (this.radioForm.valid) {
+      this.getResults(this.formatData(data));
+    } else {
+      alert('all fields required!');
     }
-    this.getResults(this.formatData(data));
   }
 
   formatData(data:any) {
-    const start = `${data.startDate}T${data.startTime}`;
-    const end = `${data.endDate}T${data.endTime}`;
+    const start = `${data.startDate}T${data.startTime}Z`;
+    const end = `${data.endDate}T${data.endTime}Z`;
     return {start, end}
   }
 

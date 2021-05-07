@@ -13,6 +13,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { HighchartsService } from './highcharts.service';
+
+import { ChartModule } from 'angular-highcharts';
 
 registerLocaleData(en);
 
@@ -25,13 +28,15 @@ registerLocaleData(en);
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    ChartModule,
     HttpClientModule,
     BrowserAnimationsModule,
     IconsProviderModule,
     NzLayoutModule,
     NzMenuModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [{ provide: NZ_I18N, useValue: en_US }, 
+    HighchartsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
