@@ -1,1 +1,22 @@
-<p>st-radio-form works!</p>
+<form nz-form [formGroup]="radioForm">
+    <nz-form-item>
+        <nz-form-label nzFor="startTime">From</nz-form-label>
+        <nz-form-control>
+            <input formControlName="startTime" type="time">
+            <input formControlName="startDate" type="date">
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label nzFor="endTime">To</nz-form-label>
+        <nz-form-control>
+            <input formControlName="endTime" type="time">
+            <input formControlName="endDate" type="date">
+        </nz-form-control>
+    </nz-form-item>  
+    <nz-form-item>
+        <nz-form-control>
+          <button type="button" nz-button nzType="primary" (click)="submitForm()">Submit</button>
+        </nz-form-control>
+      </nz-form-item>
+  </form>
+
